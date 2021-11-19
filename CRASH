@@ -1,4 +1,4 @@
-print("LoL"
+print("LoL")
 setclipboard('https://www.roblox.com/groups/10888265/DA-HOOD-SHOP-RX#!/about')
 
 game.StarterGui:SetCore("SendNotification", {
