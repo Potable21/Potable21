@@ -89,6 +89,15 @@ local function VZODOXC_fake_script() -- Frame.LocalScript
 
     CRASH.MouseButton1Down:Connect(
         function()
+            local vu = game:GetService("VirtualUser")
+            game:GetService("Players").LocalPlayer.Idled:connect(
+                function()
+                    vu:Button2Down(Vector2.new(0, 0), workspace.CurrentCamera.CFrame)
+                    wait(1)
+                    vu:Button2Up(Vector2.new(0, 0), workspace.CurrentCamera.CFrame)
+                end
+            )
+            print("LOL")
             print("WORK.")
             CRASH:Destroy()
             EDIT.Text = "Starting."
@@ -102,7 +111,7 @@ local function VZODOXC_fake_script() -- Frame.LocalScript
                     local ITEM = game.Workspace.Ignored.Shop[gunName]
                     local datplace = plr.Character.HumanoidRootPart.Position
                     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =
-                        ITEM.Head.CFrame + Vector3.new(0, -3, 0)
+                        ITEM.Head.CFrame + Vector3.new(0, -6, 0)
                     wait(0.5)
                     fireclickdetector(game.Workspace.Ignored.Shop[gunName].ClickDetector)
                     fireclickdetector(game.Workspace.Ignored.Shop[gunName].ClickDetector)
